@@ -29,12 +29,12 @@ public class LinkedList {
             head = currentNode.next;
             return;
         }
-        while(currentNode!=null && !currentNode.data.equals(key)) {
-            prevNode = currentNode;
+        while(currentNode!=null && !currentNode.next.data.equals(key)) {
+            //prevNode = currentNode;
             currentNode = currentNode.next;
         }
         if(currentNode!=null) {
-            prevNode.next = currentNode.next;
+            currentNode.next = currentNode.next.next;
         } else {
             System.out.println();
             System.out.println("Key " + key + " NOT Found");

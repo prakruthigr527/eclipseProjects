@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.linkedList.Queue;
 import com.example.demo.linkedList.Stack;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -47,7 +48,7 @@ public class DemoApplication {
 		cll.delete("first");
 		cll.print();*/
 
-		Stack stack = new Stack();
+	/*	Stack stack = new Stack();
 		stack.push("one");
 		stack.push("two");
 		stack.push("three");
@@ -57,7 +58,19 @@ public class DemoApplication {
 		stack.peek();
 		stack.pop();
 		stack.pop();
-		stack.pop();
+		stack.pop();*/
+
+		Queue queue = new Queue();
+		queue.enqueue("1");
+		queue.enqueue("2");
+		queue.enqueue("3");
+		queue.print();
+		queue.dequeue();
+		queue.dequeue();
+		queue.print();
+		queue.dequeue();
+		queue.dequeue();
+		queue.print();
 
 	}
 

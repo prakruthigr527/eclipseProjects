@@ -18,34 +18,34 @@ public class DoublyLinkedList {
                     if (nodeLocation==null || nodeLocation==head) {
                         Node tempNode = head;
                         head = newNode;
-                        head.next = tempNode;
-                        tempNode.prev = head;
+                        head.right = tempNode;
+                        tempNode.left = head;
                         break;
                     } else {
-                        Node tempNode = nodeLocation.prev;
-                        tempNode.next = newNode;
-                        newNode.next=nodeLocation;
-                        newNode.prev=tempNode;
-                        nodeLocation.prev = newNode;
+                        Node tempNode = nodeLocation.left;
+                        tempNode.right = newNode;
+                        newNode.right=nodeLocation;
+                        newNode.left=tempNode;
+                        nodeLocation.left = newNode;
                         break;
                     }
                 }
                 case "end"   : {
                         Node node = head;
                         if (nodeLocation==null) {
-                            while (node.next != null) {
-                            node = node.next;
+                            while (node.right != null) {
+                            node = node.right;
                             }
-                            node.next = newNode;
-                            newNode.prev = node;
+                            node.right = newNode;
+                            newNode.left = node;
                             break;
                         } else {
-                            Node tempNode = nodeLocation.next;
-                            nodeLocation.next=newNode;
-                            newNode.next=tempNode;
-                            newNode.prev=nodeLocation;
+                            Node tempNode = nodeLocation.right;
+                            nodeLocation.right=newNode;
+                            newNode.right=tempNode;
+                            newNode.left=nodeLocation;
                             if(tempNode!=null)
-                                tempNode.prev=newNode;
+                                tempNode.left=newNode;
                     }
                 }
             }
@@ -58,12 +58,12 @@ public class DoublyLinkedList {
         while(n!=null){
             System.out.print(n.data + " ");
             last=n;
-            n = n.next;
+            n = n.right;
         }
         System.out.println();
         while(last!=null) {
             System.out.print(last.data + " ");
-            last =last.prev;
+            last =last.left;
         }
         System.out.println();
         System.out.println("--********--*********--**********--");
@@ -75,12 +75,12 @@ public class DoublyLinkedList {
             return;
         }
         if(nodeLocation == head){
-            head = nodeLocation.next;
+            head = nodeLocation.right;
         }
 
-        if(nodeLocation.prev != null) {
-            nodeLocation.prev.next = nodeLocation.next;
-            nodeLocation.next.prev = nodeLocation.prev;
+        if(nodeLocation.left != null) {
+            nodeLocation.left.right = nodeLocation.right;
+            nodeLocation.right.left = nodeLocation.left;
         }
     }
 

@@ -1,14 +1,14 @@
-package com.example.demo;
+package com.example.demo.codingExercises;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BalancedOrUnBalanced {
 
-    public static void main(String[] args) {
+    public static void areBrackectsBalanced (String str) {
 
         // Get the String to be converted
-        String str = "{{()}(({])){}}";
+        //String str = "{}{{()}(()){}}";
 
         List<Character> charList = new ArrayList<>();
         charList.add(str.charAt(0));

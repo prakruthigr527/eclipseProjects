@@ -1,10 +1,9 @@
 package com.example.demo;
 
-import com.example.demo.doublyLinkedList.BinaryTree;
-import com.example.demo.doublyLinkedList.Node;
-import com.example.demo.linkedList.Queue;
-import com.example.demo.linkedList.Stack;
-import com.example.demo.sortingAlgorithms.Sort;
+import com.example.demo.codingExercises.BalancedOrUnBalanced;
+import com.example.demo.codingExercises.MoveAllZeroesToEndOfArray;
+import com.example.demo.codingExercises.SnakeOrSpiral;
+import com.example.demo.linkedList.LinkedList;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -13,6 +12,8 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
+
+		Math.abs(0.8);
 
 //		LinkedList linkedList= new LinkedList();
 //		linkedList.insert("first",linkedList);
@@ -80,8 +81,8 @@ public class DemoApplication {
 		tree.getRoot().setRight(new Node(" great grand mother"))*/
 		;
 
-	/*	int arr[] = {5,8,2,0,1,9,6};
-		*//*Sort.print(arr, "Before Bubble Sort");
+		/*	int arr[] = {5,8,2,0,1,9,6};
+		 *//*Sort.print(arr, "Before Bubble Sort");
 		Sort.bubbleSort(arr);
 		Sort.print(arr, "After Bubble Sort");
 		arr = new int [] {5,8,2,0,1};
@@ -97,6 +98,10 @@ public class DemoApplication {
 		Sort.insertionSort(arr);
 		Sort.print(arr, "After Insertion Sort 2");*/
 
+		//BalancedOrUnBalanced.areBrackectsBalanced("{{()}(({])){}}");
+		//MoveAllZeroesToEndOfArray.move(new int[]{1, 4, 0, 5, 9, 0, 7});
+		SnakeOrSpiral.spiral();
+		SnakeOrSpiral.snake();
 
 //Given a random alpha-numeric string with no special characters, reformat the string without adding or removing
 //        any characters so that no alphabet characters are adjacent to any other alphabet characters and no numeric characters
@@ -105,38 +110,5 @@ public class DemoApplication {
 //        the end of the string. In either case keep all alphabet characters in the same order relative to each other before and after
 //        the formatting and also keep all numeric characters in the same order releative to each other before and after the formatting.
 //        */
-
-		String input = "aabb12cc345";
-		char[] inputArray = input.toCharArray();
-		System.out.println(inputArray);
-
-		char[] outputNumberArray = new char[input.length()];
-		char[] outputAlphabetArray = new char[input.length()];
-		int count=0, j=input.length();
-		for (int i=0 ;i<input.length();i++){
-			if(!alphabetic(input.charAt(i))) {
-				outputNumberArray[j] = inputArray[i];
-				j--;
-			}
-			else {
-				outputAlphabetArray[count] = inputArray[i];
-				count++;
-			}
-		}
-		input = new String(outputAlphabetArray) + new String(outputNumberArray);
-		System.out.println(input);
-		input = input.substring(0,count) + input.substring(input.length()-j, input.length());
-		System.out.println(input);
-
-
-	}
-
-	static boolean alphabetic(char alphabet){
-
-		if((alphabet > 64 && alphabet<=90)||(alphabet > 96 && alphabet<=122)){
-			return true;
-		}
-		return false;
-
 	}
 }
